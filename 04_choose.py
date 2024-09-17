@@ -1,9 +1,9 @@
 #<Dua> <Baig>
 #<TNPG>
 #SoftDev
-#K<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
+#K<nn> -- <Choose Random Devo/Python Lists and Dictionaries/Chooses a random devo from krewes dictionary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
 #<2024>-<09>-<16>
-#time spent: <elapsed time in hours, rounded to nearest tenth>
+#time spent: <0.8 hours>
 import random
 
 krewes = {
@@ -24,5 +24,6 @@ krewes = {
 def ChooseDevo():
     period = list(krewes.keys())
     period = period[random.randint(0, len(period)-1)]
-    devo = krewes[];
-    print(period);
+    devo = list(krewes[period]);
+    devo = devo[random.randint(0, len(devo)-1)]
+    return devo;

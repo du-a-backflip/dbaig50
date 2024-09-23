@@ -17,7 +17,7 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
 Press CTRL+C to quit
 
-4. It will be sent back to the client when accessing the / directory. You can tell because it says that it's running on a different server, and when you open the http link, it shows "no hablo queso".
+4. It will be sent back to the client when accessing the / directory. You can tell because it says that it's running on a different WSGI server, and when you open the http link, it shows "no hablo queso".
 5. I think I've seen similar constructs in java.
  ...
 

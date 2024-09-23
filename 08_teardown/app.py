@@ -16,8 +16,8 @@ QCC:
  ...
 
 INVESTIGATIVE APPROACH:
-First we pip installed flask and activated a virtual isolated environment.
-After the instillation, we read the output in the terminal that consisted of flask and it's dependencies.
+First we made a venv and pip installed flask on it.
+After installing, we read the output in the terminal that consisted of flask and it's dependencies.
 Flask uses a WSGI, an HTML renderer(Jinja2), itsdangerous, click.
 '''
 

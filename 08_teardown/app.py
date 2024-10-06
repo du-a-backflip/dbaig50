@@ -1,5 +1,9 @@
 #Dua Baig
-
+#ADD
+#SoftDev
+#K08 -- Intro to flask, learning about how flask works
+#9-22-2024
+#Time Spent: ~1 hour
 '''
 DISCO:
  - flask is a python framework used for web development

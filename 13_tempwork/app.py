@@ -1,88 +1,97 @@
-#Dua Baig
-#VICTOOOOOORIOUS
-#SoftDev
-#K13 -- Putting occupations on a website with html
-#2024-10-1
-#time spent: 2.1 hours
-
-import random as r
-
-
-def pickrand():
-    f = open("data\occupations.csv", "r")
-    string = f.read()
-
-    list = string.split("\n")
-    list = list[1:len(list)-2] #removes example row, total row, and new line row
-
-    names = []
-    nums = []
-#counter = 0
-    for i in range(len(list)):
-        if(list[i][0] == "\""):
-            indexcomma = list[i][1:].index("\"") + 2
-            indexat = list[i][1:].index("@")
-            name = list[i][1:indexcomma - 1] #starts at first quote, ends at second quote
-            num = list[i][indexcomma + 1:indexat]
-            #print(list[i])
-            #print(list[i][indexat])
-        else:
-            split = list[i].split("@")
-            name = split[0].split(",")[0]
-            num = split[0].split(",")[1]
-        names.append(name)
-        nums.append(float(num))
-    #counter += 1
-    #print(str(counter) + ": " + name)
-#print(names)
-#print(nums)
-#print(dict)
-    return r.choices(names, nums)[0]
-
-def gettable():
-    f = open("data\occupations.csv", "r")
-    string = f.read()
-
-    list = string.split("\n")
-    list = list[1:len(list)-2] #removes example row, total row, and new line row
-
-    dict = {}
-    #counter = 0
-    for i in range(len(list)):
-        if(list[i][0] == "\""):
-            indexcomma = list[i][1:].index("\"") + 2
-            indexat = list[i][1:].index("@")
-            name = list[i][1:indexcomma - 1] #starts at first quote, ends at second quote
-            num = list[i][indexcomma + 1:indexat]
-            link = list[i][indexat + 1:]
-        else:
-            split = list[i].split("@")
-            name = split[0].split(",")[0]
-            num = split[0].split(",")[1]
-            link = split[1]
-        dict.update({i:[name,num,link]})
-        #counter += 1
-        #print(str(counter) + ": " + name)
-    #print(names)
-    #print(nums)
-    #print(dict)
-    return dict
+# Dua Baig
+# Wild Blasters
+# SoftDev
+# K13 -- Template for Success
+# 2024-09-30
+# time spent: 1.1
 
 from flask import Flask, render_template
-app = Flask(__name__)
+app = Flask(__name__)    
 
-@app.route("/")
-def hello_world():
-    return "Hello world"
+import csv
+import random
+
+# makes dictionary of all values in csv, then loops through that dictionary to make 3 lists for each column
+with open("data/occupations.csv", newline="") as csvfile:
+    #creates a dictionary for every row that can be parsed through
+    reader = csv.DictReader(csvfile)
+    jobs = []
+    percents = []
+    links = []
+    for row in reader:
+        jobs.append(row['Job Class']), percents.append(float(row['Percentage'])), links.append(row['Links'])
+        
+def RandomManual():
+    # find a valid percentage, subtract percents until random <=0 and we can return the corresponding jobs
+    rand = random.random() * percents[-1]
+    for i in range(len(percents)):
+        rand -= percents[i]
+        if rand <= 0:
+            return "Fated Career: " + jobs[i] + " <a href=" + "\"" + links[i] + "\">(Helpful Link for " + jobs[i] + " Career)"+ "</a>" 
+
+# old html template
+
+# html_website = '''
+# <!DOCTYPE html>
+#     <head>
+#         <title>
+#             TITLE
+#         </title>
+#         <style>
+#         STYLE
+#         </style>
+#         HEADER
+#     </head>
+#     <body>
+#         BODY
+#     </body>
+# </html>'''
 
 
+def make_table(lists, lists1):
+    #html table template
+    html_table = '''
+        <table class="table" border=1>
+            <thead>
+                _THEAD_
+            </thead>
+            <tbody>
+                _TBODY_
+            </tbody>
+        </table>'''
+    html_table = html_table.replace("_THEAD_", "<th>Occupations</th><th>Links</th>")
+    tbody = ""
+    #loops through lists made earlier to make table html
+    for i in range (len(lists)-1):
+        tbody += "<tr><td>" + lists[i] + "</td>"+ "<td>" + " <a href=" + "\"" + links[i] + "\">Helpful Link for " + lists[i] + " Career"+ "</a>" + "</td></tr>\n\t"
+    html_table = html_table.replace("_TBODY_", tbody[:-2])
+    return html_table
+
+
+# def htmlOut(template):
+#     template = template.replace("HEADER", "<h1>Team Name: Wild Blasters - Roster: Stanley Hoo, Marco Quintero, Dua Baig</h1>\n")
+#     template = template.replace("TITLE", "Template for Success\n")
+#     body = "<h2>Period 4</h2>\n"
+#     body += f"<p>{RandomManual()}</p>\n"
+#     body += make_table(jobs,links)
+#     template = template.replace("BODY", body)
+#     return template    
 
 @app.route("/wdywtbwygp")
-def test_tmplt():
+def htmlTemplate():
+    header = "<h1>Team Name: Wild Blasters - Roster: Stanley Hoo, Marco Quintero, Dua Baig</h1>\n"
+    title = "Template for Success"
+    body = "<h2>Period 4</h2>\n"
+    body += f"<p>{RandomManual()}</p>\n"
+    body += make_table(jobs,links)
+    return render_template('tablified.html', HEADING = header, TITLE = title, TABLE = body)
 
-    return render_template( 'tablified.html', title="An Appropriate Title", roster = "Victor Casado, Tawab Berri, Jacob Lukose", TNPG = "VICTOOOOOORIOUS", heading = "A website that chooses a job for you and provides job info", job = pickrand(), dictionary = gettable())
-
+# def hello_world():
+#     print(__name__)                  
+#     a = htmlOut(html_website)
+#     print(a)
+#     return a
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(port=5001)
+    app.run()     

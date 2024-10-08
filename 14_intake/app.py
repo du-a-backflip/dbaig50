@@ -1,6 +1,9 @@
-# Clyde 'Thluffy' Sinclair
+# Dua Baig
+# Wild Blasters
 # SoftDev
-# October 2024
+# K14 -- Template for Success
+# 2024-09-30
+# time spent: 
 
 # import conventions:
 # list most general first (standard python library)
@@ -41,34 +44,34 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/") #, methods=['GET', 'POST'])
 def disp_loginpage():
-    #print("\n\n\n")
-    #print("***DIAG: this Flask obj ***")
-    #print(app)
-    #print("***DIAG: request obj ***")
-    #print(request)
-    #print("***DIAG: request.args ***")
-    #print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
-    #print("***DIAG: request.headers ***")
-    #print(request.headers)
-    return render_template( 'login.html' )
+    print("\n\n\n")
+    print("***DIAG: this Flask obj ***")
+    print(app)
+    print("***DIAG: request obj ***")
+    print(request)
+    print("***DIAG: request.args ***")
+    print(request.args)
+#     print("***DIAG: request.args['username']  ***")
+#     print(request.args['username'])
+    print("***DIAG: request.headers ***")
+    print(request.headers)
+    return render_template( 'login.html' ) #probably displays page with submit button and username textbox?
 
 
-@app.route("/auth") # , methods=['GET', 'POST'])
+@app.route("/auth") # , methods=['GET', 'POST']) #might also be what login html refers to with form action
 def authenticate():
-    #print("\n\n\n")
-    #print("***DIAG: this Flask obj ***")
-    #print(app)
-    #print("***DIAG: request obj ***")
-    #print(request)
-    #print("***DIAG: request.args ***")
-    #print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
-    #print("***DIAG: request.headers ***")
-    #print(request.headers)
-    return "Waaaa hooo HAAAH"  #response to a form submission
+    print("\n\n\n")
+    print("***DIAG: this Flask obj ***")
+    print(app)
+    print("***DIAG: request obj ***")
+    print(request)
+    print("***DIAG: request.args ***")
+    print(request.args)
+    print("***DIAG: request.args['username']  ***")
+    print(request.args['username'])
+    print("***DIAG: request.headers ***")
+    print(request.headers)
+    return "Waaaa hooo HAAAH"  #response to a form submission # probably shows when submitting username
 
 
     
@@ -76,3 +79,5 @@ if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True 
     app.run()
+
+#debugging will be enabled on this file, not testmod0.py, since the latter is imported and so _name_ won't equal main

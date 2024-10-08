@@ -1,23 +1,91 @@
-< your heading here >
+Dua Baig
+Wild Blasters
+SoftDev
+K14 -- 
+2024-10-08
+time spent: 0.7 hours
 
 DISCO:
-* 
-* 
-* 
+* Form action /auth could be referring to auth page (redirect to this page if submitted)
+* Predictions: Shows a page with a textbox and submit button, prints "this statemen is printed in test module" in computer
+    * Put values in, press submit, redirect to auth page
+    * Conditional print statment for testmod0 probably not printed, as it is imported as module so _name_ does not equal "main".
+           * When tested: if a person changes the if statement, the conditional print statement shows up in terminal
+* Thought if we uncommented out code, would show inputted username, html generated, etc.
+          
 -----------------------------------------------------------------------
 
 
 Q/C/C:
-* 
-* 
-* 
+* Does form action == /auth actually refer to a different page/route that the site should redirect you to if submit is pressed?
+    * Can you put lots of actions for different buttons with different form actions?
+* Actually uncommenting all of these results in an error (issue at line 55) -> doesn't know what request.args['username']
+* Commenting out the lines mentioning request.args['username'] prints:
+***DIAG: this Flask obj ***
+<Flask 'app'>
+***DIAG: request obj ***
+<Request 'http://127.0.0.1:5000/' [GET]>
+***DIAG: request.args ***
+ImmutableMultiDict([])
+***DIAG: request.headers ***
+Host: 127.0.0.1:5000
+Connection: keep-alive
+Cache-Control: max-age=0
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+127.0.0.1 - - [08/Oct/2024 08:17:50] "GET / HTTP/1.1" 200 -
+
+
+
+
+***DIAG: this Flask obj ***
+<Flask 'app'>
+***DIAG: request obj ***
+<Request 'http://127.0.0.1:5000/auth?username=+,sd&sub1=Submit' [GET]>
+***DIAG: request.args ***
+ImmutableMultiDict([('username', ' ,sd'), ('sub1', 'Submit')])
+***DIAG: request.args['username']  ***
+_username_
+***DIAG: request.headers ***
+Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://127.0.0.1:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+* Submitting something in the username box also prints the time you submitted the username and:
+  "GET /auth?username=+,sd&sub1=Submit HTTP/1.1" 200 -
+  
+* DIAG is printed (doesn't seem to do anything out of the ordinary with the printed statement)
+
 -----------------------------------------------------------------------
 
 
 OTHER?
-* 
-* 
-* 
+* Maybe the reason having the statements to print request.args['username'] result in an error is because no username has been inputted yet? So the computer doesn't know what it
+refers to and it causes an error
 -----------------------------------------------------------------------
 
 

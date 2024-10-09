@@ -1,0 +1,14 @@
+Dua Baig
+&: Anastasia Lee, Nia Lam, Dua Baig
+SoftDev
+Oct 2024
+
+NOTES:
+* GET requests can be seen in the URL (after ".../auth")
+    * Can see what was put in (as well as which textbox it was put in), and which button was pressed.
+* POST requests are not seen in URL (still isn't secure though)
+* request.args has the variables from GET requests, request.form has the variables from POST requests (and is also an immutable dictionary)
+    * POST might refer to postback? (which the form would be)
+* GET is the default method in the HTML template, but you can specify using POST by adding method="POST" to the line that begins the form
+    * Since GET is default, you don't have to put methods =['GET'] in the app route.
+* For POST requests, have to include methods=['POST'] in app route (and also mention methods=['POST'] in the html file where it says form action).

@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
 
-@app.route("/") #, methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
     # print("\n\n\n")
     # print("***DIAG: this Flask obj ***")

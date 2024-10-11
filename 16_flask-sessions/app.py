@@ -25,7 +25,7 @@ app.secret_key = os.urandom(32)
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
     if 'username' in session:
-        rp = "<p>Logged in as " + session['username'] + "</p>"
+        heading = "Logged in as " + session['username'] + ""
         rp += "<br><form action='/logout'>"
         rp += "<input type='submit' value='logout?'>"
         rp += "</form>"
@@ -35,7 +35,7 @@ def disp_loginpage():
         rp += "<form action='/auth'>"
         rp += "<input type='submit' value='==>'>"
         rp += "</form>"
-    return render_template( 'login.html', foo = rp )
+    return render_template( 'login.html', foo = rp, header =  )
 
 
 @app.route("/auth", methods=['GET', 'POST'])

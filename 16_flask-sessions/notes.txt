@@ -1,0 +1,20 @@
+Dua Baig
+ 31
+SoftDev
+October 8 2024
+
+- app.secret_key = os.urandom(32) generates a random secret key
+   - is good because key isn't public
+   
+- It is probably best to put both "GET" and "POST" as methods to reduce risks of getting "Method Not Allowed"
+   - can just use if statements to do specific things for each method type
+
+- Username can be gotten from request.form (probably want to use POST methods instead of GET so user doesn't see input in the url)
+
+- safe renders html tags (if using render_template and plugging html tags in)
+
+- You are allowed to return redirect (which will take you to a different page)
+
+- You can refer to things inputed into a request form with 'NAME OF OBJECT' (can check if present/put in before)
+
+- Session is like a dictionary and so you can get info from it by mentioning session[key]

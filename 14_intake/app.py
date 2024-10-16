@@ -71,7 +71,7 @@ def authenticate():
     #print(request.args['username'])
     #print("***DIAG: request.headers ***")
     print(request.headers)
-    return "Waaaa hooo HAAAH"  #response to a form submission # probably shows when submitting username
+    return (request.args['username'])  #response to a form submission # probably shows when submitting username
 
 
     

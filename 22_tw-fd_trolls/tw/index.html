@@ -5,27 +5,8 @@ DuoDevs - Linda Zheng and Dua Baig
 SoftDev
 K22 - Tailwind Site
 Time Spent: 1
-
-DISCO:
-Tailwind seems to have its own way of declaring colors (instead of using hexcode or rgb, you put color family and then a number showing how dark things are). It also has it's own way to show sides.
-Py and Px are margins (Px is left margin, py is height/width of box)
-
-
-QCC
-q0 (Did you have to consult resources beyond your Devo-generated on-ramp? Your answer should be a single binary digit.)
-1
-
-q0b If answer to preceding question is 1, cite all resources consulted -- including verbal consultations and/or neighbouring team's readme. 1citation/line.)
-Tailwind CSS Colors - https://tailwindcss.com/docs/text-color 
-Tailwind CSS Font Size - https://tailwindcss.com/docs/font-size
-Devo-generated on-ramp used: Team Boaa (Ankita and Mark)
-
-
-
-q1 (only to be answered after you have finished... At this point, which FEF do you prefer, and why? Your answer to this Q should be the only portion of your submission that differs from that of your teammate.)
-I kind of preferred Tailwind, because I feel like it was more intuitive to me than the other 2 FEF. I liked the color system too.
-
 --->
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -43,7 +24,7 @@ I kind of preferred Tailwind, because I feel like it was more intuitive to me th
   <body>
     <div class="lg:content-auto bg-orange-600">
         <h1 class="text-3xl font-bold underline bg-yellow-500 py-10 px-6"> <!--text-3xl refers to size, bg is background, px is left margin-->
-            ALL ABOUT STARS!
+            ALL ABOUT STARS! By DuoDevs (Linda Zheng and Dua Baig)
         </h1>
         <div class="bg-white dark:bg-amber-500 px-6 py-8 ring-1 ring-slate-900/5"> <!--numbers after colorname clarify brightness, py alters width-->
             <h2 class="text-2xl font-bold dark:text-yellow-200">
@@ -67,10 +48,12 @@ I kind of preferred Tailwind, because I feel like it was more intuitive to me th
 				<img class="w-40" src="sun.jpg" alt="Sun Image">
 			</div>
 			<div>
-				<div class="text-xl font-medium text-black">The Sun!</div>
-				<p class="text-slate-500">The Sun is a yellow dwarf star! It's the star the Earth orbits! It's part of the Milky Way</p>
-            </div>
+        <div class="animate-pulse">
+  				<div class="text-xl font-medium text-black">The Sun!</div>
+  				<p class="text-slate-500">The Sun is a yellow dwarf star! It's the star the Earth orbits! It's part of the Milky Way</p>
         </div>
+      </div>
+    </div>
         <br>
         <div class="bg-white dark:bg-red-500 px-6 py-20 ring-1 ring-slate-900/5">
            <p class = "text-2xl font-bold dark:text-yellow-200">THE END</p>

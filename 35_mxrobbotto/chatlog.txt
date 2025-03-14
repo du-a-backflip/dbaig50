@@ -1,3 +1,4 @@
+Coding Team:
 Create a web log hosting site, with the following features:
 
     Users will have to register to use the site.
@@ -5,9 +6,10 @@ Create a web log hosting site, with the following features:
         Create a new blog
         Update their blog by adding a new entry
         View and edit their own past entries
-        View the blogs of other users 
+        View the blogs of other users
 Use Flask
 
+CoPilot:
 To create a web log hosting site using Flask with the specified features, follow these steps:
 
     Set up the project structure:
@@ -433,7 +435,7 @@ Public code references from 9 repositories
 
 This basic Flask application allows users to register, log in, create blogs, add entries, view their own and others' blogs, and edit their own entries. You can expand upon this by adding more features, improving the UI, and enhancing security.
 Use Flask will serve as the web server/delivery framework.
-Use SQLite3 for the backend data storage system. 
+Use SQLite3 for the backend data storage system.
 
 To create the web log hosting site using Flask and SQLite3, follow these steps:
 
@@ -857,11 +859,16 @@ with app.app_context():
 Public code references from 8 repositories
 
 This basic Flask application will allow users to register, log in, create blogs, add entries, view their own and others' blogs, and edit their own entries. You can expand upon this by adding more features, improving the UI, and enhancing security.
+
+Coding Team:
 That's good, but storage needs to be in SQLite 3 tables
 
+CoPilot:
 The project has already been set up to use SQLite3 for storage, as specified in the config.py file. The SQLALCHEMY_DATABASE_URI is set to sqlite:///site.db, which means SQLite3 is being used as the backend data storage system.
 
 If there are any specific changes or additional features you need to implement, such as creating additional tables or modifying existing ones, please let me know!
+
+Coding Team:
 can you import sqlite3 and use that instead of sql academy please
 
 To use sqlite3 instead of SQLAlchemy in your Flask project, follow these steps:
@@ -1117,8 +1124,11 @@ Public code references from 10 repositories
     Update templates if necessary to match the new structure.
 
 This code will use the sqlite3 module to handle database operations directly. The schema is defined in schema.sql, and the models are implemented as Python classes with static methods for database operations.
-can you just make the tables in a python file instead of an sql one
 
+Coding Team:
+Can you just make the tables in a python file instead of an sql one
+
+CoPilot:
 Sure, I can help you create the SQLite3 tables directly in a Python file. Here's how you can do it:
 
     Create a new Python file, e.g., init_db.py, to initialize the database and create the tables:
